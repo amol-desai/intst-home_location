@@ -1,8 +1,9 @@
 import math
-##S = raw_input()
-##N = map(int,S.split())
-##num_nodes = N.pop(0)
-##num_edges = N.pop(0)
+import random
+####S = raw_input()
+####N = map(int,S.split())
+####num_nodes = N.pop(0)
+####num_edges = N.pop(0)
 
 a,b = map(int,raw_input().split())
 x = [0]
@@ -12,23 +13,39 @@ for i in range(1,5):
     x.append(x1)
     y.append(y1)
 
-#print x
-#print y
-w = 1-a*a
-z = 1 - b*b
-c = 2*(a*a*x[2]-x[1])
-d = 2*(a*a*y[2]-y[1])
-e = 2*(b*b*x[4]-x[3])
-f = 2*(b*b*y[4]-y[3])
-g = a*a*(x[2]*x[2]+y[2]*y[2])-(x[1]*x[1]+y[1]*y[1])
-h = b*b*(x[4]*x[4]+y[4]*y[4])-(x[3]*x[3]+y[3]*y[3])
+##a = int(random.random()*1000)
+##b = int(random.random()*1000)
+##for i in range(1,5):
+##    x.append(int(random.random()*2000-1000))
+##    y.append(int(random.random()*2000-1000))
 
-ca = w*(z*d-f*w)*(z*d-f*w)+(z*c-e*w)*(z*c-e*w)
-cb = 2*(e*w-z*c)*(g*z-h*w)+c*(z*d-f*w)*(z*d-f*w)+(e*w-z*c)*(z*d-f*w)*d
-cc = ((g*z-h*w)*(g*z-h*w))-((z*d-f*w)*(z*d-f*w))*g+(g*z-h*w)*d*(z*d-f*w)
-#print ca
-#print cb
-#print cc
+##print a
+##print b
+##print x
+##print y
+w = 1-a*a
+##print w
+z = 1 - b*b
+##print z
+c = 2*(a*a*x[2]-x[1])
+##print c
+d = 2*(a*a*y[2]-y[1])
+##print d
+e = 2*(b*b*x[4]-x[3])
+##print e
+f = 2*(b*b*y[4]-y[3])
+##print f
+g = a*a*(x[2]*x[2]+y[2]*y[2])-(x[1]*x[1]+y[1]*y[1])
+##print g
+h = b*b*(x[4]*x[4]+y[4]*y[4])-(x[3]*x[3]+y[3]*y[3])
+##print h
+
+ca = w*((z*d-f*w)*(z*d-f*w)+(z*c-e*w)*(z*c-e*w))
+cb = 2*(e*w-z*c)*(g*z-h*w)*w+c*(z*d-f*w)*(z*d-f*w)+(e*w-z*c)*(z*d-f*w)*d
+cc = ((g*z-h*w)*(g*z-h*w))*w-((z*d-f*w)*(z*d-f*w))*g+(g*z-h*w)*d*(z*d-f*w)
+##print ca
+##print cb
+##print cc
 
 disc = cb*cb-4*ca*cc
 if (z*d-f*w) == 0:
