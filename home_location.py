@@ -1,4 +1,5 @@
 import math
+import math
 import random
 ####S = raw_input()
 ####N = map(int,S.split())
@@ -48,7 +49,7 @@ cc = ((g*z-h*w)*(g*z-h*w))*w-((z*d-f*w)*(z*d-f*w))*g+(g*z-h*w)*d*(z*d-f*w)
 #print cc
 
 disc = cb*cb-4*ca*cc
-if (z*d-f*w) == 0:
+if (z*d-f*w) == 0 or ca == 0:
     disc = -1
 #print disc
 
