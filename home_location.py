@@ -13,39 +13,39 @@ for i in range(1,5):
     x.append(x1)
     y.append(y1)
 
-##a = int(random.random()*1000)
-##b = int(random.random()*1000)
-##for i in range(1,5):
-##    x.append(int(random.random()*2000-1000))
-##    y.append(int(random.random()*2000-1000))
+#a = int(random.random()*1000)
+#b = int(random.random()*1000)
+#for i in range(1,5):
+#    x.append(int(random.random()*2000-1000))
+#    y.append(int(random.random()*2000-1000))
 
-##print a
-##print b
-##print x
-##print y
+#print a
+#print b
+#print x
+#print y
 w = 1-a*a
-##print w
+#print w
 z = 1 - b*b
-##print z
+#print z
 c = 2*(a*a*x[2]-x[1])
-##print c
+#print c
 d = 2*(a*a*y[2]-y[1])
-##print d
+#print d
 e = 2*(b*b*x[4]-x[3])
-##print e
+#print e
 f = 2*(b*b*y[4]-y[3])
-##print f
+#print f
 g = a*a*(x[2]*x[2]+y[2]*y[2])-(x[1]*x[1]+y[1]*y[1])
-##print g
+#print g
 h = b*b*(x[4]*x[4]+y[4]*y[4])-(x[3]*x[3]+y[3]*y[3])
-##print h
+#print h
 
 ca = w*((z*d-f*w)*(z*d-f*w)+(z*c-e*w)*(z*c-e*w))
 cb = 2*(e*w-z*c)*(g*z-h*w)*w+c*(z*d-f*w)*(z*d-f*w)+(e*w-z*c)*(z*d-f*w)*d
 cc = ((g*z-h*w)*(g*z-h*w))*w-((z*d-f*w)*(z*d-f*w))*g+(g*z-h*w)*d*(z*d-f*w)
-##print ca
-##print cb
-##print cc
+#print ca
+#print cb
+#print cc
 
 disc = cb*cb-4*ca*cc
 if (z*d-f*w) == 0:
@@ -61,7 +61,10 @@ elif disc == 0:
         posx = 0
     if posy == 0:
         posy = 0
-    print ("%.2f" % posx)+" "+("%.2f" % posy)
+    if posx >= -1000 or posx <= 1000 or posy >= -1000 or posy <= 1000:
+        print ("%.2f" % posx)+" "+("%.2f" % posy)
+    else:
+        print "Impossible"
 else:
     posx = min([(-cb+math.sqrt(disc))/(2*ca),(-cb-math.sqrt(disc))/(2*ca)])
     posy = ((g*z - h*w)-posx*(z*c-e*w))/(z*d-f*w)
@@ -69,4 +72,7 @@ else:
         posx = 0
     if posy == 0:
         posy = 0
-    print ("%.2f" % posx)+" "+("%.2f" % posy)
+    if posx >= -1000 or posx <= 1000 or posy >= -1000 or posy <= 1000:
+        print ("%.2f" % posx)+" "+("%.2f" % posy)
+    else:
+        print "Impossible"
